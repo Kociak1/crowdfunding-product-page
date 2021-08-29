@@ -1,0 +1,68 @@
+@use './colors' as *;
+nav {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 2rem auto;
+
+  .menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    bottom: 0;
+    transform: translate(0, calc(100% + 2rem));
+    border-radius: 0.5rem;
+    li {
+      list-style: none;
+      padding: 1.4rem;
+      font-weight: 500;
+      font-size: 1.25rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    li:not(li:nth-of-type(1)) {
+      border-top: 1px solid rgb(236, 236, 236);
+    }
+  }
+  .show {
+    display: block;
+  }
+}
+.open_menu,
+.close_menu {
+  display: none;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.295);
+  z-index: 10;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+$fonts: (
+  h3: 1.802rem,
+  p: 1rem,
+  button: 1.125rem,
+  input: 1.125rem,
+  ".big": 2.281rem,
+  b: 1.125rem,
+);
+
+@each $name, $value in $fonts {
+  #{$name} {
+    font-size: $value;
+  }
+}

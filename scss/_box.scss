@@ -1,0 +1,108 @@
+@use './colors' as *;
+main {
+  width: 90%;
+  margin: 12rem auto;
+  display: grid;
+  gap: 1rem;
+  position: relative;
+}
+
+.box,
+.card,
+.dialog {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid rgb(242, 242, 242);
+  position: relative;
+}
+
+button {
+  height: 3.7rem;
+  border-radius: 3rem;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
+  span {
+    padding: 0 1rem;
+    display: none;
+  }
+}
+.green {
+  background: $Moderate-cyan;
+  color: white;
+  &:hover {
+    background-color: hsl(176, 72%, 20%);
+  }
+}
+
+.btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  .green {
+    flex-grow: 1;
+  }
+}
+
+.box1 .icon {
+  position: absolute;
+  left: 50%;
+  top: -0;
+  transform: translate(-50%, -50%);
+}
+
+.box2 {
+  text-align: center;
+  p {
+    position: relative;
+    span {
+      font-weight: bold;
+      display: block;
+    }
+    padding-bottom: 1rem;
+    &:not(p:nth-of-type(3))::after {
+      content: "";
+      position: absolute;
+      width: 4rem;
+      height: 1px;
+      bottom: 0;
+      left: calc(50% - 2rem);
+      background: rgb(217, 217, 217);
+    }
+  }
+}
+
+.box3 {
+  span {
+    display: block;
+    color: $Moderate-cyan;
+    font-weight: bold;
+  }
+
+  h3 {
+    span {
+      display: inline-block;
+      color: black;
+    }
+  }
+
+  .green {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.card {
+  border-color: rgb(221, 221, 221);
+}
+.big {
+  padding-bottom: 1rem;
+}
